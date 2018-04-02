@@ -1,5 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<h1>hello world</h1>,
+const toDoList = (
+  <ol>
+    <li>Learn React</li>
+    <li>Study coding riddles</li>
+    <li>Improve interview skills</li>
+    <li>Build several portfolio web-apps</li>
+  </ol>
+);
+
+ReactDOM.render(toDoList,
                 document.getElementById('app'));
