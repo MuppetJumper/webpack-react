@@ -1,0 +1,26 @@
+{
+  "name": "webpack-react",
+  "version": "1.0.0",
+  "description": "React tutorial using webpack",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuppetJumper/webpack-react.git"
+  },
+  "keywords": [
+    "Webpack",
+    "React",
+    "ReactJS",
+    "Babel",
+    "ES6"
+  ],
+  "author": "Yuval Cohen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MuppetJumper/webpack-react/issues"
+  },
+  "homepage": "https://github.com/MuppetJumper/webpack-react#readme"
+}
