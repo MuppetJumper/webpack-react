@@ -2,9 +2,11 @@
   "name": "webpack-react",
   "version": "1.0.0",
   "description": "React tutorial using webpack",
-  "main": "app.js",
+  "main": "app.jsx",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build": "webpack-dev-server -d",
+    "build:prod": "webpack -p"
   },
   "repository": {
     "type": "git",
