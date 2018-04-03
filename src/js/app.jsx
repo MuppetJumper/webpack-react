@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const toDoList = (
-  <ol>
+  <ul>
     <li>Learn React</li>
+    <li>Learn Web designing</li>
     <li>Study coding riddles</li>
     <li>Improve interview skills</li>
     <li>Build several portfolio web-apps</li>
-  </ol>
+  </ul>
 );
 
 ReactDOM.render(toDoList,
