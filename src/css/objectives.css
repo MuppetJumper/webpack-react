@@ -1,11 +1,11 @@
-.objectives ul {
+ul.objectives {
   list-style-type: circle;
   border: 1px dotted black;
   border-radius: 10px;
   width: 20%;
 }
 
-.objectives ul li {
+ul.objectives li {
   margin-left: 5px;
   font-family: "Times New Roman", Times, serif;
   color: #ff0000c9;
