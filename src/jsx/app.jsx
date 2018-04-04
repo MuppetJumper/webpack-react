@@ -12,11 +12,8 @@ let onPicClick = ((e) => {
 
   onPicClick.prevPic = targetImg.src;
 
-  if (onPicClick.prevPic === dummyProfilePic) {
-    onPicClick.currPic = realProfilePic;
-  } else {
-    onPicClick.currPic = dummyProfilePic;
-  }
+  onPicClick.currPic =
+    onPicClick.prevPic === dummyProfilePic ? realProfilePic : dummyProfilePic;
 
   targetImg.src = onPicClick.currPic;
 });
