@@ -9,12 +9,21 @@ const profileDescription = "My name is Yuval and I'm a junior web developer";
 
 let onPicClick = ((e) => {
   let targetImg = document.getElementById('profilePic');
-  targetImg.src = realProfilePic;
+
+  onPicClick.prevPic = targetImg.src;
+
+  if (onPicClick.prevPic === dummyProfilePic) {
+    onPicClick.currPic = realProfilePic;
+  } else {
+    onPicClick.currPic = dummyProfilePic;
+  }
+
+  targetImg.src = onPicClick.currPic;
 });
 
 const shortProfile = (
   <div className="shortProfile">
-    <img id="profilePic" src={dummyProfilePic} onClick={onPicClick} />
+    <img id="profilePic" src={dummyProfilePic} onClick={onPicClick} title="Click to show face" />
     <p id="profileDescription">{profileDescription}</p>
   </div>
 )
