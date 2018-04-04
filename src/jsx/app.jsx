@@ -2,15 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../css/objectives.css';
 import '../css/profile.css';
-import profilePic from '../images/profile-picture.png';
+import dummyProfilePic from '../images/profile-picture.png';
+import realProfilePic from '../images/id_pic.jpg';
 
 const profileDescription = "My name is Yuval and I'm a junior web developer";
+
+let onPicClick = ((e) => {
+  let targetImg = document.getElementById('profilePic');
+  targetImg.src = realProfilePic;
+});
+
 const shortProfile = (
   <div className="shortProfile">
-    <img id="profilePic" src={profilePic} />
+    <img id="profilePic" src={dummyProfilePic} onClick={onPicClick} />
     <p id="profileDescription">{profileDescription}</p>
   </div>
-);
+)
 
 const objectiveList = (
   <div className="objectives">
@@ -27,5 +34,12 @@ const objectiveList = (
   </div>
 );
 
-ReactDOM.render(objectiveList,
+const appLayout = (
+  <div>
+    {shortProfile}
+    {objectiveList}
+  </div>
+);
+
+ReactDOM.render(appLayout,
                 document.getElementById('app'));

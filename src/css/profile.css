@@ -2,3 +2,8 @@
   border-radius: 10px;
   width: 20%;
 }
+
+img#profilePic {
+  width: 8em;
+  height: 8em;
+}
