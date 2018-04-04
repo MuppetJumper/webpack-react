@@ -1,8 +1,11 @@
+.objectives {
+  border-radius: 10px;
+  width: 20%;
+}
+
 ul.objectives {
   list-style-type: circle;
   border: 1px dotted black;
-  border-radius: 10px;
-  width: 20%;
 }
 
 ul.objectives li {
