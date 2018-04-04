@@ -18,7 +18,16 @@ module.exports = {
         test: /\.jsx$/,
         exclude: /node_modules/,
         use: ['babel-loader']
-      }
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 8000
+                }
+            }]
+        }
     ]
   }
 };
