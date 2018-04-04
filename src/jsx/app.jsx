@@ -8,14 +8,8 @@ import realProfilePic from '../images/id_pic.jpg';
 const profileDescription = "My name is Yuval and I'm a junior web developer";
 
 let onPicClick = ((e) => {
-  let targetImg = document.getElementById('profilePic');
-
-  onPicClick.prevPic = targetImg.src;
-
-  onPicClick.currPic =
-    onPicClick.prevPic === dummyProfilePic ? realProfilePic : dummyProfilePic;
-
-  targetImg.src = onPicClick.currPic;
+  e.target.src =
+    e.target.src === dummyProfilePic ? realProfilePic : dummyProfilePic;
 });
 
 const shortProfile = (
