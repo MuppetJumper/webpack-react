@@ -4,7 +4,6 @@ import '../../css/profile.css';
 import dummyProfilePic from '../../images/profile-picture.png';
 import realProfilePic from '../../images/id_pic.jpg';
 
-
 export default class Profile extends React.Component {
   onProfilePicClick(e){
     e.target.src =
