@@ -7,6 +7,10 @@ import realProfilePic from '../images/id_pic.jpg';
 
 const profileDescription = "My name is Yuval and I'm a junior web developer";
 
+let isInterviewerNice = (()=>{
+  return ( Math.random() < 0.5 );
+});
+
 let onPicClick = ((e) => {
   e.target.src =
     e.target.src === dummyProfilePic ? realProfilePic : dummyProfilePic;
@@ -30,6 +34,7 @@ const objectiveList = (
       <li>Study coding riddles</li>
       <li>Improve interview skills</li>
       <li>Build several portfolio web-apps</li>
+      { isInterviewerNice() && <li>Learn to cook</li> }
     </ul>
   </div>
 );
