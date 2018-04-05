@@ -1,26 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Profile from './components/profile.jsx';
 import '../css/objectives.css';
-import '../css/profile.css';
-import dummyProfilePic from '../images/profile-picture.png';
-import realProfilePic from '../images/id_pic.jpg';
 
 
 
 
-let onPicClick = ((e) => {
-  e.target.src =
-    e.target.src === dummyProfilePic ? realProfilePic : dummyProfilePic;
-});
 
-const profileDescription = "My name is Yuval and I'm a junior web developer";
 
-const shortProfile = (
-  <div className="shortProfile">
-    <img id="profilePic" src={dummyProfilePic} onClick={onPicClick} title="Click to show face" />
-    <p id="profileDescription">{profileDescription}</p>
-  </div>
-)
 
 
 let isInterviewerNice = (()=>{
@@ -47,7 +34,7 @@ const objectivesSegment = (
 
 const appLayout = (
   <div>
-    {shortProfile}
+    <Profile />
     {objectivesSegment}
   </div>
 );
