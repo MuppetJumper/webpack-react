@@ -6,7 +6,7 @@ import Objectives from './components/objectives.jsx';
 const appLayout = (
   <div>
     <Profile />
-    <Objectives />
+    <Objectives nicePercent='50' />
   </div>
 );
 
