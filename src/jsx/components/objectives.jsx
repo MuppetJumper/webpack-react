@@ -4,20 +4,12 @@ import '../../css/objectives.css';
 
 export default class Objectives extends React.Component {
 
-  get interviewerNicenessPrecent(){
-    return (this._nicenessPercent);
-  }
-  set interviewerNicenessPrecent(val){
-    this._nicenessPercent = val;
-  }
-
   isInterviewerNice(){
-    return ( Math.random() < (this.interviewerNicenessPrecent / 100 ) );
+    return ( Math.random() < (this.props.nicePercent / 100 ) );
   }
 
   constructor() {
     super();
-    this.interviewerNicenessPrecent = 50;
     this.normalObjectives = ['Learn React',
                              'Learn web designing',
                              'Study coding riddles',
