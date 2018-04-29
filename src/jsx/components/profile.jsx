@@ -9,8 +9,8 @@ export default class Profile extends React.Component {
     e.target.src =
       e.target.src === dummyProfilePic ? realProfilePic : dummyProfilePic;
   }
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.profileDescription = "My name is Yuval and I'm a junior web developer";
     this.onProfilePicClick.bind(this);
   }

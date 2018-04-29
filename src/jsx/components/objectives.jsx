@@ -8,8 +8,8 @@ export default class Objectives extends React.Component {
     return ( Math.random() < (this.props.nicePercent / 100 ) );
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.normalObjectives = ['Learn React',
                              'Learn web designing',
                              'Study coding riddles',
