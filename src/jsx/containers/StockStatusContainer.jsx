@@ -1,22 +1,21 @@
 import React from 'react';
-import {StockStatus} from '../components/StockStatus';
+import {StockStatus} from '../components/StockStatus.jsx';
 
 export class StockStatusContainer extends React.Component {
   constructor(props) {
-
+    super(props);
     this.generateUpdateRequest = this.generateUpdateRequest.bind(this);
+    this.updateStockPrices = this.updateStockPrices.bind(this);
 
     this.state = {
-      trackedStocks: [{
-        tickerSymbol: '',
-        price: 0
-      }]};
+      trackedStocks: []
+    };
   }
   generateUpdateRequest() {
 
     const tickerSymbolList =
       (this.state.trackedStocks.map(
-        x => x.tickerSymbol.toLowerCase();
+        x => { return (x.tickerSymbol.toLowerCase()); }
       )).join();
 
     const reqURL =
@@ -31,13 +30,14 @@ export class StockStatusContainer extends React.Component {
 
     const updRequest = new XMLHttpRequest();
     updRequest.open("GET", reqURL, true);
-    updRequest.onload = () => {
+    updRequest.onload = (() => {
       if (updRequest.status == 200) {
+        console.log(this.updateStockPrices);
         this.updateStockPrices(
           JSON.parse(updRequest.responseText)
         );
       }
-    };
+    }).bind(this);
 
     return (updRequest);
   }
@@ -52,7 +52,7 @@ export class StockStatusContainer extends React.Component {
       }
     }
 
-    this.setState({trackedStocks: updateStockPrices });
+    this.setState({trackedStocks: updatedStockPrices });
   }
   render() {
     return (
@@ -64,10 +64,11 @@ export class StockStatusContainer extends React.Component {
     );
   }
   componentDidMount() {
-    setInterval((() => {
-      const updRequest = this.generateUpdateRequest();
-      updRequest.send();
-    }).bind(this), 2000);
+    this.updateInterval =
+      setInterval((() => {
+        const updRequest = this.generateUpdateRequest();
+        updRequest.send();
+      }).bind(this), 2000);
   }
 }
 
