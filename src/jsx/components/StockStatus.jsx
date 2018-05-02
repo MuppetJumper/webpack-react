@@ -6,9 +6,10 @@ export class StockStatus extends React.Component {
     super(props);
 
     this.state = {  trend: StockStatus.TRENDS.NEUTRUAL };
+    
   }
-  componentWillRecieveProps(nextProps) {
-    const newTrend = StockStatus.TRENDS.NEUTRUAL;
+  componentWillReceiveProps(nextProps) {
+    let newTrend = StockStatus.TRENDS.NEUTRUAL;
     if (this.props.price < nextProps.price) {
       newTrend = StockStatus.TRENDS.POSITIVE;
     } else if (this.props.price > nextProps.price) {
@@ -44,7 +45,7 @@ StockStatus.TRENDS = {
 };
 
 StockStatus.TREND_STYLES = {
-  NEUTRUAL: {{color: 'lightgrey'}},
-  POSITIVE: {{color: 'green'}},
-  NEGATIVE: {{color: 'red'}}
+  NEUTRUAL: {color: 'lightgrey'},
+  POSITIVE: {color: 'green'},
+  NEGATIVE: {color: 'red'}
 };
